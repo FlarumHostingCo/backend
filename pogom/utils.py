@@ -83,7 +83,7 @@ def get_args():
                                 help='List of pokemon to NOT encounter for more stats')
     parser.add_argument('-ld', '--login-delay',
                         help='Time delay between each login attempt',
-                        type=float, default=5)
+                        type=float, default=30)
     parser.add_argument('-lr', '--login-retries',
                         help='Number of logins attempts before refreshing a thread',
                         type=int, default=3)
@@ -112,7 +112,7 @@ def get_args():
                         default='')
     parser.add_argument('-ns', '--no-server',
                         help='No-Server Mode. Starts the searcher but not the Webserver.',
-                        action='store_true', default=False)
+                        action='store_true', default=True)
     parser.add_argument('-os', '--only-server',
                         help='Server-Only Mode. Starts only the Webserver without the searcher.',
                         action='store_true', default=False)
@@ -162,7 +162,7 @@ def get_args():
     parser.add_argument('--db-host', help='IP or hostname for the database')
     parser.add_argument('--db-port', help='Port for the database', type=int, default=3306)
     parser.add_argument('--db-max_connections', help='Max connections (per thread) for the database',
-                        type=int, default=500)
+                        type=int, default=5000)
     parser.add_argument('--db-threads', help='Number of db threads; increase if the db queue falls behind',
                         type=int, default=1)
     parser.add_argument('-wh', '--webhook', help='Define URL(s) to POST webhook information to',
